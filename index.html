@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookmark Generator</title>
+    <script src="https://unpkg.com/obfuscator-js@0.1.1/dist/obfuscator.min.js"></script>
+</head>
+<body>
+    <script>
+        if (window.prompt("password?") == "nevergonnagiveyouup000") {
+            alert("correct")
+        } else {
+            alert("wrong");
+            window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+        javascript: req = new XMLHttpRequest();
+        req.onreadystatechange=function() {
+            if (req.readyState === 4){
+                if(req.status === 200){
+                    document.getElementById('onoroff').value = "Creating bookmarks is currently Enabled!"
+                } else {
+                    document.getElementById('onoroff').value = "Creating bookmarks is currently Disabled!"
+                }
+            }
+        };
+        req.open('GET', 'https://raw.githubusercontent.com/rickgivingyouup/rickgivingyouup.github.io/main/custombookmarksenabled');
+        req.send()
+
+        //https://raw.githubusercontent.com/rickgivingyouup/rickgivingyouup.github.io/main/custombookmarksenabled
+        const editbms = "javascript: reqa = new XMLHttpRequest();reqa.onreadystatechange=function() {if (reqa.readyState === 4){if(reqa.status === 200){javascript: req = new XMLHttpRequest();req.onreadystatechange=function() {if (req.readyState === 4){if(req.status === 200){var a=new Function(\"javascript: if (confirm('OK = turn on, cancel = turn off')) { document.designMode = 'on'; } else { document.designMode = 'off';}\"); a.apply(null)} else {alert('uh oh, error occured, OR the bookmark has been bricked')}} };req.open('GET', '";
+        const editbmsend = "');req.send();} else {alert('this bookmark has been bricked')}} };reqa.open('GET', 'https://raw.githubusercontent.com/rickgivingyouup/rickgivingyouup.github.io/main/custombookmarksenabled');reqa.send();";
+        const jsbms = "javascript:reqa = new XMLHttpRequest();reqa.onreadystatechange=function() {if (reqa.readyState === 4){if(reqa.status === 200){javascript: req = new XMLHttpRequest();req.onreadystatechange=function() {if (req.readyState === 4){if(req.status === 200){var a=new Function(window.prompt('Your question')); a.apply(null);} else {alert('uh oh, error occured, OR the bookmark has been bricked')}} };req.open('GET', '";
+        const jsbmsend = "');req.send();} else {alert('this bookmark has been bricked')}} };reqa.open('GET', 'https://raw.githubusercontent.com/rickgivingyouup/rickgivingyouup.github.io/main/custombookmarksenabled');reqa.send();";
+        const titlebms = "javascript:reqa = new XMLHttpRequest();reqa.onreadystatechange=function() {if (reqa.readyState === 4){if(reqa.status === 200){javascript: req = new XMLHttpRequest();req.onreadystatechange=function() {if (req.readyState === 4){if(req.status === 200){var a=new Function('document.title = window.prompt(\\\'new title?\\\')'); a.apply(null);} else {alert('uh oh, error occured, OR the bookmark has been bricked')}} };req.open('GET', '";
+        const titlebmsend = "');req.send();} else {alert('this bookmark has been bricked')}} };reqa.open('GET', 'https://raw.githubusercontent.com/rickgivingyouup/rickgivingyouup.github.io/main/custombookmarksenabled');reqa.send();";
+        function buttonclicked() {
+            if (document.getElementById('githublink').value === "") {
+                alert('you need to put your github link first, its empty')
+            } else {
+                switch(document.querySelector('#option').value) {
+                case "title":
+                    document.getElementById('output').value = titlebms + document.getElementById('githublink').value + titlebmsend;
+                    break;
+                case "design":
+                    document.getElementById('output').value = editbms + document.getElementById('githublink').value + editbmsend;
+                    break;
+                case "js":
+                    document.getElementById('output').value = jsbms + document.getElementById('githublink').value + jsbmsend;
+                    break;
+                }
+            }
+
+
+
+
+            
+            
+        }
+    </script>
+
+    <h1>bookmark generator :(((((((</h1>
+
+
+
+    <input disabled type="text" style="width: 500px"  id='onoroff'></input>
+    <br>
+    <input id='githublink' type="text" placeholder="put ur github link here" style="width: 500px"> </input>
+
+
+<br>
+<br>
+<select id="option">
+    <option value="title">Title</option>
+    <option value="design">Design Mode</option>
+    <option value="js">JS</option>
+</select>
+<br>
+<br>
+<button onclick="buttonclicked();">press this button to get ur bookmark</button>
+<br>
+<br>
+
+    <input id='output' type="text" placeholder="heres where the generated bookmark goessssssssssssssssssss" disabled style="width: 500px; height: 250px"> </input>
+
+</body>
+</html>
